@@ -1,6 +1,6 @@
 # Getting Started
 
-BGC-DATA-PROCESSING provides a set of modules to process and map biogeochemical data.
+PREPOBS-BGC provides a set of modules to process and map biogeochemical data.
 
 ## Requirements
 
