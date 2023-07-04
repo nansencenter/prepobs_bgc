@@ -1,0 +1,100 @@
+site_name: BGC-DATA-PROCESSING
+# Add repository metadate for more integration and ease-of-use
+repo_name: bgc-data-processing
+# repo_url: repo_url
+
+theme:
+  name: "material"
+  logo: assets/logo/NERSC.png
+  favicon: assets/logo/NERSC.png
+  palette:
+    primary: blue
+  features:
+    - navigation.tabs               # Tabs
+    - navigation.tabs.sticky        # Above tabs stay displayed
+    - navigation.indexes            # Attach documents to sections
+    - navigation.instant
+    - navigation.footer
+    - navigation.top                # Scroll back to top button
+    - content.code.annotate         # Admonitions
+    - content.code.copy             # copy code block
+    - watch:
+        - "src/bgc_data_processing"
+
+nav:
+  - Getting Started:
+    - index.md
+  - Scripts:
+    - scripts/index.md
+    - scripts/compare_sims_obs.md
+    - scripts/extract_data.md
+    - scripts/extract_water_mass.md
+    - scripts/plot_data_density.md
+    - scripts/plot_interactive.md
+    - scripts/plot_profile.md
+    - scripts/plot_ts_diagram.md
+    - scripts/plot_var_boxplot.md
+    - scripts/plot_var_histogram.md
+    - scripts/plot_var_pressure.md
+    - scripts/save_data.md
+  - How does it work ?:
+    - how_it_works/index.md
+    - how_it_works/variables.md
+    - how_it_works/loading.md
+    - how_it_works/plotting.md
+    - how_it_works/closest_point_find.md
+  - Examples:
+    - examples/index.md
+    - examples/boundaries.md
+    - examples/plot.md
+  - Virtual Environment:
+    - virtual_env/index.md
+  - Contributing:
+    - contributing/index.md
+  - Code Reference: reference/
+
+plugins:
+  - autorefs
+  - search                                      # Search bar
+  - macros                                      # Use variables in documentation
+  - literate-nav:
+      nav_file: SUMMARY.md                      # To auto-generate paths
+  - gen-files:
+      scripts:
+        - docs/automation/pages_generator.py    # To auto generate 'Code Reference' Section
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            # General Options
+            # Headings Options
+            heading_level: 3                    # Heading size
+            # Members Options
+            members_order: source               # Member sorting
+            # Docstrings Options
+            docstring_style: numpy              # To parse docstrings
+            docstring_section_style: table      # Display section format
+            merge_init_into_class: true         # Merge __init__ docstring in Class'
+            show_if_no_docstring: true          # Show even if no docstring
+            # Signature Options
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences      # code blocks
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true   # Tabs
+  - footnotes
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+extra:
+  repo_tree: repo_url/tree/main
+  repo_blob: repo_url/blob/main

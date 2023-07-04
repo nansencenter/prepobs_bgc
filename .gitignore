@@ -1,0 +1,13 @@
+# pycache
+__pycache__
+# Tests scripts
+sandbox
+argo_profile_check.py
+# Data saving folders
+bgc_figs
+bgc_data
+# virtual environemnt
+.venv
+.vscode
+# config file
+config/*.toml

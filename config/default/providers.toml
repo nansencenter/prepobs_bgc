@@ -1,0 +1,233 @@
+# Lines starting with '#? ' are used to verify variables' types
+# Type hints lines are structured the following way:
+# Variable keys: possible types: additionnal comment
+
+[ARGO]
+#? ARGO.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? ARGO.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "float"
+#? ARGO.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = [
+    "GL_PR_PF_6900798.nc",
+    "GL_PR_PF_5903592.nc",
+    "GL_PR_PF_5903887.nc",
+    "GL_PR_PF_6900796.nc",
+    "GL_PR_PF_6900797.nc",
+    "GL_PR_PF_6900799.nc",
+    "GL_PR_PF_6903551.nc",
+    "GL_PR_PF_6903567.nc",
+    "GL_PR_PF_6903574.nc",
+    "GL_PR_PF_6903575.nc",
+    "GL_PR_PF_6903578.nc",
+    "GL_PR_PF_6903579.nc",
+]
+[CLIVAR]
+#? CLIVAR.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? CLIVAR.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? CLIVAR.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = ["clivar_20040310_06MT.csv"]
+[GLODAPv2]
+#? GLODAPv2.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? GLODAPv2.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? GLODAPv2.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[GLODAP_2019]
+#? GLODAP_2019.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? GLODAP_2019.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? GLODAP_2019.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[GLODAP_2022]
+#? GLODAP_2022.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? GLODAP_2022.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? GLODAP_2022.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[ICES]
+#? ICES.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? ICES.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? ICES.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[IMR]
+#? IMR.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? IMR.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? IMR.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[NMDC]
+#? NMDC.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? NMDC.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? NMDC.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[CMEMS]
+#? CMEMS.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? CMEMS.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? CMEMS.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = [
+    'BO_TS_BO_SM3SYKE.nc',
+    'BO_TS_BO_LL3SYKE.nc',
+    'BO_TS_BO_GF1SYKE.nc',
+    'BO_TS_BO_LL13SYKE.nc',
+    'BO_TS_BO_BO4SYKE.nc',
+    'BO_TS_BO_LL21SYKE.nc',
+    'BO_TS_BO_LL6ASYKE.nc',
+    'BO_TS_BO_F64SYKE.nc',
+    'BO_TS_BO_LL7SYKE.nc',
+    'BO_TS_BO_LL3ASYKE.nc',
+    'BO_TS_BO_MS9SYKE.nc',
+    'BO_TS_BO_MS10SYKE.nc',
+    'BO_TS_BO_BY4SYKE.nc',
+    'BO_TS_BO_BO5SYKE.nc',
+    'BO_TS_BO_BY38SYKE.nc',
+    'BO_TS_BO_IU4SYKE.nc',
+    'BO_TS_BO_PORIKU4SYKE.nc',
+    'BO_TS_BO_MS3SYKE.nc',
+    'BO_TS_BO_GF6SYKE.nc',
+    'BO_TS_BO_SR8SYKE.nc',
+    'BO_TS_BO_HL6SYKE.nc',
+    'BO_TS_BO_HA9SYKE.nc',
+    'BO_TS_BO_BY7SYKE.nc',
+    'BO_TS_BO_BCSIII10SYKE.nc',
+    'BO_TS_BO_BCSIVB6SYKE.nc',
+    'BO_TS_BO_BY1SYKE.nc',
+    'BO_TS_BO_GF2SYKE.nc',
+    'BO_TS_BO_RR6SYKE.nc',
+    'BO_TS_BO_LL23SYKE.nc',
+    'BO_TS_BO_BCSIII15SYKE.nc',
+    'BO_TS_BO_LL5SYKE.nc',
+    'GL_PR_BO_EXEC004D.nc',
+    'BO_TS_BO_CIIISYKE.nc',
+    'BO_TS_BO_F41SYKE.nc',
+    'BO_TS_BO_US2SYKE.nc',
+    'BO_TS_BO_HBP133SYKE.nc',
+    'BO_TS_BO_BCSIVB3WSYKE.nc',
+    'BO_TS_BO_LL6SYKE.nc',
+    'BO_TS_BO_BY5SYKE.nc',
+    'BO_TS_BO_BO3SYKE.nc',
+    'BO_TS_BO_SH2SYKE.nc',
+    'BO_TS_BO_SR5SYKE.nc',
+    'BO_TS_BO_F42SYKE.nc',
+    'BO_TS_BO_F26SYKE.nc',
+    'BO_TS_BO_X17SYKE.nc',
+    'BO_TS_BO_HBP213SYKE.nc',
+    'BO_TS_BO_LF3SYKE.nc',
+    'BO_TS_BO_US3SYKE.nc',
+    'BO_TS_BO_IU2SYKE.nc',
+    'BO_TS_BO_HL1SYKE.nc',
+    'BO_TS_BO_BY29SYKE.nc',
+    'BO_TS_BO_US5BSYKE.nc',
+    'BO_TS_BO_GRD1SYKE.nc',
+    'BO_TS_BO_BCSIVB2SYKE.nc',
+    'BO_TS_BO_LF1SYKE.nc',
+    'BO_TS_BO_SR6SYKE.nc',
+    'BO_TS_BO_US7SYKE.nc',
+    'BO_TS_BO_HBP137SYKE.nc',
+    'BO_TS_BO_RR5SYKE.nc',
+    'BO_TS_BO_BCSIII14SYKE.nc',
+    'BO_TS_BO_HA2SYKE.nc',
+    'BO_TS_BO_RR3SYKE.nc',
+    'BO_TS_BO_BY9SYKE.nc',
+    'BO_TS_BO_GF4SYKE.nc',
+    'BO_TS_BO_IBSV9SYKE.nc',
+    'BO_TS_BO_TEILI1SYKE.nc',
+    'BO_TS_BO_X14SYKE.nc',
+    'BO_TS_BO_F62SYKE.nc',
+    'BO_TS_BO_F33SYKE.nc',
+    'BO_TS_BO_F40SYKE.nc',
+    'BO_TS_BO_HBP216SYKE.nc',
+    'BO_TS_BO_HBP212SYKE.nc',
+    'BO_TS_BO_GR6SYKE.nc',
+    'BO_TS_BO_F15SYKE.nc',
+    'BO_TS_BO_BCSIII12SYKE.nc',
+    'BO_TS_BO_F18SYKE.nc',
+    'BO_TS_BO_HBP215SYKE.nc',
+    'BO_TS_BO_NAR2SYKE.nc',
+    'BO_TS_BO_BY3SYKE.nc',
+    'BO_TS_BO_AjaxSYKE.nc',
+    'BO_TS_BO_US6BSYKE.nc',
+    'BO_TS_BO_JMLSYKE.nc',
+    'BO_TS_BO_SS29SYKE.nc',
+    'BO_TS_BO_LL4ASYKE.nc',
+    'BO_TS_BO_BY15SYKE.nc',
+    'BO_TS_BO_CVISYKE.nc',
+    'BO_TS_BO_F80SYKE.nc',
+    'BO_TS_BO_BCSIII2SYKE.nc',
+    'BO_TS_BO_F13SYKE.nc',
+    'BO_TS_BO_SR3SYKE.nc',
+    'BO_TS_BO_SR1ASYKE.nc',
+    'BO_TS_BO_MS6SYKE.nc',
+    'BO_TS_BO_BCSIII8SYKE.nc',
+    'BO_TS_BO_SLPN2SYKE.nc',
+    'BO_TS_BO_EB1SYKE.nc',
+    'BO_TS_BO_F79SYKE.nc',
+    'BO_TS_BO_LL11SYKE.nc',
+    'BO_TS_BO_BY2SYKE.nc',
+    'BO_TS_BO_BY6SYKE.nc',
+    'BO_TS_BO_LF2SYKE.nc',
+    'BO_TS_BO_IBSV10SYKE.nc',
+    'BO_TS_BO_CVSYKE.nc',
+    'BO_TS_BO_HBP136SYKE.nc',
+    'BO_TS_BO_F67SYKE.nc',
+    'BO_TS_BO_LL9SYKE.nc',
+    'BO_TS_BO_RR7SYKE.nc',
+    'BO_TS_BO_IU5SYKE.nc',
+    'BO_TS_BO_BCSIVA3SYKE.nc',
+    'BO_TS_BO_CISYKE.nc',
+    'BO_TS_BO_F2SYKE.nc',
+    'BO_TS_BO_MS8SYKE.nc',
+    'BO_TS_BO_GF3SYKE.nc',
+    'BO_TS_BO_F9SYKE.nc',
+    'BO_TS_BO_BY32SYKE.nc',
+    'BO_TS_BO_NAR3SYKE.nc',
+    'BO_TS_BO_LL17SYKE.nc',
+    'BO_TS_BO_SR7SYKE.nc',
+    'BO_TS_BO_BCSIII6SYKE.nc',
+    'BO_TS_BO_HBP115SYKE.nc',
+    'BO_TS_BO_BY10SYKE.nc',
+    'BO_TS_BO_X19SYKE.nc',
+    'BO_TS_BO_F71SYKE.nc',
+    'BO_TS_BO_IU3SYKE.nc',
+    'BO_TS_BO_F16SYKE.nc',
+    'BO_TS_BO_F33ASYKE.nc',
+    'BO_TS_BO_LL19SYKE.nc',
+    'BO_TS_BO_MS4SYKE.nc',
+    'BO_TS_BO_MS2SYKE.nc',
+    'BO_TS_BO_US4ASYKE.nc',
+    'BO_TS_BO_LL12SYKE.nc',
+    'BO_TS_BO_IU6SYKE.nc',
+    'BO_TS_BO_X26SYKE.nc',
+    'BO_TS_BO_MS5SYKE.nc',
+    'BO_TS_BO_SR4SYKE.nc',
+    'BO_TS_BO_BCSIII4SYKE.nc',
+    'BO_TS_BO_LL15SYKE.nc',
+]
+[HYCOM]
+#? HYCOM.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? HYCOM.REGIONAL_GRID_BASENAME: str: basename of the regional grid abfiles
+REGIONAL_GRID_BASENAME = "path/to/file_basename"
+#? HYCOM.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "model"
+#? HYCOM.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[ESACCI-OC]
+#? ESACCI-OC.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? ESACCI-OC.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "satellite"
+#? ESACCI-OC.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
