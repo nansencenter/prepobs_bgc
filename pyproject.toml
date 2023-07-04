@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "bgc-data-processing"
+name = "prepobs-bgc"
 version = "0.1.0"
 description = "Set of scripts to prepare csv files with BGC variables for EnKF prepobs"
 authors = ["Gaétan Rigaut <gaetanrigaut.s@gmail.com>"]

@@ -1,5 +1,5 @@
-# bgc-data-processing
-bgc_data_processing is a set of scripts to prepare csv files with BGC variables for EnKF prepobs.
+# prepobs-bgc
+prepobs-bgc is a set of scripts to prepare csv files with BGC variables for EnKF prepobs.
 ## Getting started
 ### Requirements
 Having conda installed is necessary to use this project.
