@@ -8,7 +8,11 @@ SCRIPTS_DIR := scripts
 CONFIG_DIR := config
 CONFIG_DEFAULT_DIR := config/default
 VENV := ./.venv
-BIN := $(VENV)/bin/
+ifeq ($(OS), Windows_NT)
+	BIN = ${VENV}/Scripts/
+else
+	BIN = ${VENV}/bin/
+endif
 HOOKS := ./.git/hooks
 
 default:
