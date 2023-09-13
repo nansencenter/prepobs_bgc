@@ -4,6 +4,12 @@ prepobs-bgc is a set of scripts to prepare csv files with BGC variables for EnKF
 ### Requirements
 Having conda installed is necessary to use this project.
 More informations on how to download conda can be found [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
+#### Sigma2 Betzy installation
+Following modules are needed to be loaded:
+``` bash
+load moule Python/3.11.3-GCCcore-12.3.0
+load module Anaconda3/2022.05
+```
 ### Documentation
 This project has a more exhaustive documentation which has been created using [mkdocs](https://www.mkdocs.org/).
 
