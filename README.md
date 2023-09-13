@@ -7,8 +7,8 @@ More informations on how to download conda can be found [here](https://conda.io/
 #### Sigma2 Betzy installation
 Following modules are needed to be loaded:
 ``` bash
-load moule Python/3.11.3-GCCcore-12.3.0
-load module Anaconda3/2022.05
+module load Python/3.11.3-GCCcore-12.3.0
+module load Anaconda3/2022.05
 ```
 ### Documentation
 This project has a more exhaustive documentation which has been created using [mkdocs](https://www.mkdocs.org/).
