@@ -28,7 +28,14 @@ poetry install --group docs
 mkdocs serve
 ```
 
-The documentation should then be available at the following url: `localhost:8000`
+The documentation should then be available at the following url: `localhost:8000`. The same documentation uploaded by a command:
+
+``` bash
+make deploy-doc
+```
+
+can be found at [prepobs_bgc](https://nansencenter.github.io/prepobs_bgc/).
+
 ## Running the Scripts
 
 To run a script from the [scripts](/scripts/) folder and named `script_1.py`, one can use the following command:
