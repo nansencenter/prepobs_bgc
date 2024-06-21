@@ -10,6 +10,7 @@ Following modules are needed to be loaded:
 module load Python/3.11.3-GCCcore-12.3.0
 module load Anaconda3/2022.05
 ```
+For conda installation on Betzy, see [here](https://documentation.sigma2.no/software/userinstallsw/conda.html#installing-with-conda).
 ### Documentation
 This project has a more exhaustive documentation which has been created using [mkdocs](https://www.mkdocs.org/).
 
