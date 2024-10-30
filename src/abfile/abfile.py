@@ -1,4 +1,4 @@
-""" MNodule for doing IO on files used by hycom """
+""" Module for doing IO on files used by hycom """
 import numpy
 import struct
 import sys
@@ -16,7 +16,7 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 logger.propagate=False # Dont propagate to parent in hierarchy (determined by "." in __name__)
 
-# Firldnames as they appear in ordered form in the regional grid files
+# Fieldnames as they appear in ordered form in the regional grid files
 grid_ordered_fieldnames = [
    "plon", "plat", "qlon", "qlat", "ulon", "ulat", "vlon", "vlat", "pang", "scpx",
    "scpy", "scqx", "scqy", "scux", "scuy", "scvx", "scvy", "cori", "pasp"
