@@ -1,5 +1,5 @@
-# prepobs-bgc
-prepobs-bgc is a set of scripts to prepare csv files with BGC variables for EnKF prepobs.
+# prepobs_bgc
+prepobs_bgc is a set of scripts to prepare csv files with BGC variables for EnKF prepobs.
 ## Getting started
 ### Requirements
 Having conda installed is necessary to use this project.
