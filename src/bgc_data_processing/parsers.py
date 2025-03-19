@@ -76,7 +76,7 @@ class TomlParser:
         return deepcopy(var)
 
     def _set(self, keys: list[str], value: Any) -> None:
-        """Set the value of an element of the dictionnary.
+        """Set the value of an element of the dictionary.
 
         Parameters
         ----------
@@ -315,7 +315,8 @@ def directory_check(get_variable: Callable) -> Callable:
                         error_msg = (
                             f"Directory {directory} already exists and is not empty."
                         )
-                        raise IsADirectoryError(error_msg)
+                        #raise IsADirectoryError(error_msg)
+                        print(error_msg)
                     if self.existing_dir_behavior == "merge":
                         pass
                     elif self.existing_dir_behavior == "clean":
