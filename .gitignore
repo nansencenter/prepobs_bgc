@@ -11,3 +11,5 @@ bgc_data
 .vscode
 # config file
 config/*.toml
+# backup file
+*~
