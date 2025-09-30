@@ -22,6 +22,20 @@ EXCLUDE = [
     "GL_PR_PF_6903578.nc",
     "GL_PR_PF_6903579.nc",
 ]
+[ARGO_DAC]
+#? ARGO_DAC.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? ARGO_DAC.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "float"
+#? ARGO_DAC.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[BGC_ARGO_DAC]
+#? BGC_ARGO_DAC.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? BGC_ARGO_DAC.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "float"
+#? BGC_ARGO_DAC.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
 [CLIVAR]
 #? CLIVAR.PATH: str: path to the folder containing the data
 PATH = "path/to/file/directory"
@@ -49,6 +63,20 @@ PATH = "path/to/file/directory"
 #? GLODAP_2022.CATEGORY: str: data category, either 'float' or 'in_situ'
 CATEGORY = "in_situ"
 #? GLODAP_2022.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[GLODAP_CSV]
+#? GLODAP_CSV.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? GLODAP_CSV.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? GLODAP_CSV.EXCLUDE: list[str]: files to exclude from loading    
+EXCLUDE = []
+[GLODAP_CMEMS]
+#? GLODAP_CMEMS.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? GLODAP_CMEMS.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? GLODAP_CMEMS.EXCLUDE: list[str]: files to exclude from loading
 EXCLUDE = []
 [ICES]
 #? ICES.PATH: str: path to the folder containing the data

@@ -5,6 +5,7 @@ from pathlib import Path
 
 import bgc_data_processing as bgc_dp
 import shapely
+from bgc_data_processing.core.storers import Storer # ADDED
 
 CONFIG_FOLDER = Path("config")
 
@@ -49,7 +50,10 @@ if __name__ == "__main__":
         unit_row_index=1,
         delim_whitespace=True,
     )
-    storer.remove_duplicates(PRIORITY)
+    print("storer : ", storer)
+    print("type(storer):", type(storer))
+
+    storer.remove_duplicates(PRIORITY) ## REMOVED
     variables = storer.variables
     constraints = bgc_dp.Constraints()
     constraints.add_boundary_constraint(

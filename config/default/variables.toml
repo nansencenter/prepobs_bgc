@@ -249,3 +249,81 @@ DEFAULT = nan
 NAME_FORMAT = "%-10s"
 #? flagellate.VALUE_FORMAT: str: format to use to save the values of the variable as text
 VALUE_FORMAT = "%10.3f"
+[ph]
+#? ph.NAME: str: variable name
+NAME = "PH"
+#? ph.UNIT: str: variable unit
+UNIT = "[1]"
+#? ph.TYPE: str: variable type (among ['int', 'float', 'str', 'datetime64[ns]'])
+TYPE = "float"
+#? ph.DEFAULT: str | int | float: default variable value if nan or not existing
+DEFAULT = nan
+#? ph.NAME_FORMAT: str: format to use to save the name and unit of the variable as text
+NAME_FORMAT = "%-10s"
+#? ph.VALUE_FORMAT: str: format to use to save the values of the variable as text
+VALUE_FORMAT = "%10.3f"
+[dissolved_inorganic_carbon]
+#? dissolved_inorganic_carbon.NAME: str: variable name
+NAME = "DIC"
+#? dissolved_inorganic_carbon.UNIT: str: variable unit
+UNIT = "[µmol/kg]"
+#? dissolved_inorganic_carbon.TYPE: str: variable type (among ['int', 'float', 'str', 'datetime64[ns]'])
+TYPE = "float"
+#? dissolved_inorganic_carbon.DEFAULT: str | int | float: default variable value if nan or not existing
+DEFAULT = nan
+#? dissolved_inorganic_carbon.NAME_FORMAT: str: format to use to save the name and unit of the variable as text
+NAME_FORMAT = "%-10s"
+#? dissolved_inorganic_carbon.VALUE_FORMAT: str: format to use to save the values of the variable as text
+VALUE_FORMAT = "%10.3f"
+[total_alkalinity]
+#? total_alkalinity.NAME: str: variable name
+NAME = "TA"
+#? total_alkalinity.UNIT: str: variable unit
+UNIT = "[µmol/kg]"
+#? total_alkalinity.TYPE: str: variable type (among ['int', 'float', 'str', 'datetime64[ns]'])
+TYPE = "float"
+#? total_alkalinity.DEFAULT: str | int | float: default variable value if nan or not existing
+DEFAULT = nan
+#? total_alkalinity.NAME_FORMAT: str: format to use to save the name and unit of the variable as text
+NAME_FORMAT = "%-10s"
+#? total_alkalinity.VALUE_FORMAT: str: format to use to save the values of the variable as text
+VALUE_FORMAT = "%10.3f"
+[pCO2]
+#? pCO2.NAME: str: variable name
+NAME = "pCO2"
+#? pCO2.UNIT: str: variable unit
+UNIT = "[µatm]"
+#? pCO2.TYPE: str: variable type (among ['int', 'float', 'str', 'datetime64[ns]'])
+TYPE = "float"
+#? pCO2.DEFAULT: str | int | float: default variable value if nan or not existing
+DEFAULT = nan
+#? pCO2.NAME_FORMAT: str: format to use to save the name and unit of the variable as text
+NAME_FORMAT = "%-10s"
+#? pCO2.VALUE_FORMAT: str: format to use to save the values of the variable as text
+VALUE_FORMAT = "%10.3f"
+[bbp700]
+#? bbp700.NAME: str: variable name
+NAME = "BBP700"
+#? bbp700.UNIT: str: variable unit
+UNIT = "[1/m]"
+#? bbp700.TYPE: str: variable type (among ['int', 'float', 'str', 'datetime64[ns]'])
+TYPE = "float"
+#? bbp700.DEFAULT: str | int | float: default variable value if nan or not existing
+DEFAULT = nan
+#? bbp700.NAME_FORMAT: str: format to use to save the name and unit of the variable as text
+NAME_FORMAT = "%-10s"
+#? bbp700.VALUE_FORMAT: str: format to use to save the values of the variable as text
+VALUE_FORMAT = "%10.3f"
+[poc]
+#? poc.NAME: str: variable name
+NAME = "POC"
+#? poc.UNIT: str: variable unit
+UNIT = "[mg.m-3]"
+#? poc.TYPE: str: variable type (among ['int', 'float', 'str', 'datetime64[ns]'])
+TYPE = "float"
+#? poc.DEFAULT: str | int | float: default variable value if nan or not existing
+DEFAULT = nan
+#? poc.NAME_FORMAT: str: format to use to save the name and unit of the variable as text
+NAME_FORMAT = "%-10s"
+#? poc.VALUE_FORMAT: str: format to use to save the values of the variable as text
+VALUE_FORMAT = "%10.3f"

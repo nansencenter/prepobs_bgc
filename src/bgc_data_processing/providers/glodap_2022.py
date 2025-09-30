@@ -14,7 +14,7 @@ loader = DataSource(
     dirin=Path(PROVIDERS_CONFIG["GLODAP_2022"]["PATH"]),
     data_category=PROVIDERS_CONFIG["GLODAP_2022"]["CATEGORY"],
     excluded_files=PROVIDERS_CONFIG["GLODAP_2022"]["EXCLUDE"],
-    files_pattern=FileNamePattern("GLODAPv2.2022_all.csv"),
+    files_pattern=FileNamePattern("GLODAPv2.2022_all.csv"), 
     variable_ensemble=SourceVariableSet(
         provider=VARS["provider"].not_in_file(),
         expocode=VARS["expocode"].in_file_as("G2expocode"),
@@ -29,7 +29,7 @@ loader = DataSource(
         .in_file_as("G2depth")
         .remove_when_nan()
         .correct_with(lambda x: -x),
-        temperature=VARS["temperature"].in_file_as("G2temperature"),
+        temperature=VARS["temperature"].in_file_as("G2temperature"), 
         salinity=VARS["salinity"].in_file_as(
             ("G2salinity", "G2salinityf", [2]),
         ),
@@ -46,6 +46,12 @@ loader = DataSource(
         .in_file_as(("G2silicate", "G2silicatef", [2]))
         .remove_when_all_nan(),
         chlorophyll=VARS["chlorophyll"].not_in_file().remove_when_all_nan(),
+	ph=VARS["ph"].in_file_as(("G2phtsinsitutp","G2phtsinsitutpf", [2] )),
+	dissolved_inorganic_carbon=VARS["dissolved_inorganic_carbon"].in_file_as(("G2tco2", "G2tco2f", [2])),
+	total_alkalinity=VARS["total_alkalinity"].in_file_as(("G2talk", "G2talkf", [2])),
+	pCO2=VARS["pCO2"].not_in_file(),
+    bbp700=VARS["bbp700"].not_in_file(),
+    poc = VARS["poc"].not_in_file(),
     ),
     read_params={
         "low_memory": False,

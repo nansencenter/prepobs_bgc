@@ -34,7 +34,7 @@ loader = DataSource(
         temperature=VARS["temperature"].in_file_as(("TEMP", "TEMP_QC", [1])),
         salinity=VARS["salinity"].in_file_as(("PSAL", "PSL_QC", [1])),
         oxygen=VARS["oxygen"]
-        .in_file_as("DOX1")
+        .in_file_as(("DOX1", "DOX1_QC", [1])) 
         .correct_with(units.convert_doxy_ml_by_l_to_mmol_by_m3),
         phosphate=VARS["phosphate"]
         .in_file_as(("PHOS", "PHOS_QC", [1]))
@@ -48,5 +48,11 @@ loader = DataSource(
         chlorophyll=VARS["chlorophyll"]
         .in_file_as(("CPHL", "CPHL_QC", [1]))
         .remove_when_all_nan(),
+	ph=VARS["ph"].not_in_file(),
+	dissolved_inorganic_carbon=VARS["dissolved_inorganic_carbon"].not_in_file(),
+	total_alkalinity=VARS["total_alkalinity"].not_in_file(),
+	pCO2=VARS["pCO2"].not_in_file(),
+    bbp700=VARS["bbp700"].not_in_file(),
+    poc = VARS["poc"].not_in_file(),
     ),
 )

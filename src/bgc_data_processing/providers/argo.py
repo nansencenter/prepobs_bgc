@@ -1,8 +1,8 @@
 """Specific parameters to load Argo-provided data."""
 
 from pathlib import Path
-
 import numpy as np
+
 
 from bgc_data_processing import units
 from bgc_data_processing.core.sources import DataSource
@@ -20,7 +20,7 @@ loader = DataSource(
     variable_ensemble=SourceVariableSet(
         provider=VARS["provider"].not_in_file(),
         expocode=VARS["expocode"].not_in_file(),
-        date=VARS["date"].in_file_as("TIME"),
+        date = VARS["date"].in_file_as("TIME"),
         year=VARS["year"].not_in_file(),
         month=VARS["month"].not_in_file(),
         day=VARS["day"].not_in_file(),
@@ -40,10 +40,10 @@ loader = DataSource(
             ("PSAl", "PSAl_QC", [1]),
         ),
         oxygen=VARS["oxygen"]
-        .in_file_as("DOX2_ADJUSTED", "DOX2")
+        .in_file_as("DOX2_ADJUSTED", "DOX2_ADJUSTED_QC", [1])
         .correct_with(units.convert_umol_by_kg_to_mmol_by_m3),
         phosphate=VARS["phosphate"].not_in_file(),
-        nitrate=VARS["nitrate"].not_in_file(),
+        nitrate=VARS["nitrate"].in_file_as(("NITRATE_ADJUSTED", "NITRATE_ADJUSTED_QC", [1])),
         silicate=VARS["silicate"].not_in_file(),
         chlorophyll=VARS["chlorophyll"]
         .in_file_as(
@@ -52,5 +52,12 @@ loader = DataSource(
         )
         .remove_when_all_nan()
         .correct_with(lambda x: np.nan if x < 0.01 else x),
+	ph=VARS["ph"].not_in_file(),
+	dissolved_inorganic_carbon=VARS["dissolved_inorganic_carbon"].not_in_file(),
+	total_alkalinity=VARS["total_alkalinity"].not_in_file(),
+	pCO2=VARS["pCO2"].not_in_file(),
+    bbp700=VARS["bbp700"].in_file_as(
+        ("BBP700", "BBP700_QC", [1])),
+    poc = VARS["poc"].not_in_file(),
     ),
 )

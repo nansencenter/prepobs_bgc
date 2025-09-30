@@ -3,7 +3,7 @@
 # Variable keys: possible types: additionnal comment
 
 #? PROVIDERS: list[str]: providers to use data from
-PROVIDERS = ["GLODAP_2022", "CMEMS", "ARGO", "NMDC", "CLIVAR", "IMR", "ICES"]
+PROVIDERS = ["GLODAP_2022", "CMEMS", "ARGO", "NMDC", "CLIVAR", "IMR", "ICES","GLODAP_CMEMS"]
 #? SAVING_DIR: str: directory in which to save the dataframes
 SAVING_DIR = "bgc_data"
 #? VARIABLES: list[str]: variables to include in the output file
@@ -25,11 +25,16 @@ VARIABLES = [
     "NTRA",
     "SLCA",
     "CPHL",
+    "PH",
+    "DIC",
+    "TA",
+    "pCO2",
+    "BBP700",
 ]
 #? DATE_MIN: str: first date to load
 DATE_MIN = "20070101"
 #? DATE_MAX: str: last date to load
-DATE_MAX = "20071231"
+DATE_MAX = "20071231" 
 #? INTERVAL: str: horizontal resolution of the plot
 # If set to 'day': will group datapoint by day
 # If set to 'week': will group datapoints by their week number

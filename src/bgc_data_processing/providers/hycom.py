@@ -48,6 +48,12 @@ loader = DataSource(
                 flagellate_variable=VARS["flagellate"].in_file_as("ECO_flac"),
             ),
         ),
+	ph=VARS["ph"].not_in_file(),
+	dissolved_inorganic_carbon=VARS["dissolved_inorganic_carbon"].not_in_file(),
+	total_alkalinity=VARS["total_alkalinity"].not_in_file(),
+	pCO2=VARS["pCO2"].not_in_file(),
+    bbp700=VARS["bbp700"].not_in_file(),
+    poc = VARS["poc"].not_in_file(),
     ),
     grid_basename=PROVIDERS_CONFIG["HYCOM"]["REGIONAL_GRID_BASENAME"],
 )

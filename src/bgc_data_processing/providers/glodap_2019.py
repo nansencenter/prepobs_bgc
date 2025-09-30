@@ -44,6 +44,12 @@ loader = DataSource(
         .in_file_as(("SILCAT", "silicatef", [2]))
         .remove_when_all_nan(),
         chlorophyll=VARS["chlorophyll"].not_in_file().remove_when_all_nan(),
+	ph=VARS["ph"].not_in_file(),
+	dissolved_inorganic_carbon=VARS["dissolved_inorganic_carbon"].not_in_file(),
+	total_alkalinity=VARS["total_alkalinity"].not_in_file(),
+	pCO2=VARS["pCO2"].not_in_file(),
+    bbp700=VARS["bbp700"].not_in_file(),
+    poc = VARS["poc"].not_in_file(),
     ),
     read_params={
         "low_memory": False,

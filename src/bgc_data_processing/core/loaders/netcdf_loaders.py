@@ -75,7 +75,15 @@ class NetCDFLoader(BaseLoader):
         str
             Station id.
         """
-        return filename.split("_")[3].split(".")[0]
+        
+        
+        parts = filename.split("_")
+        if len(parts) >= 4:
+            return parts[3].split(".")[0]
+        elif len(parts) == 2:
+            return parts[0]
+        else:
+            raise ValueError(f"Unexpected filename format: {filename}")
 
     def _read(self, filepath: Path) -> netCDF4.Dataset:
         """Read the file loacted at filepath.
@@ -243,13 +251,43 @@ class NetCDFLoader(BaseLoader):
             if (flag is not None) and (flag in file_keys):
                 # get flag values from file
                 flag_values = nc_data.variables[flag][:]
-                # Fill with an integer => careful not to use an integer in the flags
-                flag_values: np.ndarray = flag_values.filled(-1)
-                good_flags = np.empty(values.shape, dtype=bool)
-                good_flags.fill(False)
-                for value in correct_flags:
-                    good_flags = good_flags | (flag_values == value)
-                return np.where(good_flags, values, np.nan)
+                
+                # If the flag is a concatenated string
+                if flag_values.dtype.char in ("S", "U"):  # string type b'' or unicode
+                    # Fill the potential masks
+                    flag_values = flag_values.filled(b"" if flag_values.dtype.char == "S" else "")
+                    
+                    # Convert in string
+                    decoded = [
+                        list(bytes(f).decode()) if isinstance(f, np.bytes_) else list(f)
+                        for f in flag_values
+                    ]
+                    
+                    # 
+                    lengths = [len(x) for x in decoded]
+                    if len(set(lengths)) != 1:
+                        print(f"[WARNING] Inconsistent flag string lengths: {set(lengths)} — skipping filter.")
+                        return values 
+                    else:
+                        flags_str = np.array(decoded, dtype='U1')  # U1 = unicode string of length 1
+                        mask = np.zeros(flags_str.shape[0], dtype=bool)
+
+                        for value in correct_flags:
+                            mask |= np.any(flags_str == str(value), axis=1)
+        
+
+                        
+                        return np.where(mask[:, np.newaxis], values, np.nan)
+
+                
+                else: 
+                    # Fill with an integer => careful not to use an integer in the flags
+                    flag_values: np.ndarray = flag_values.filled(-1)
+                    good_flags = np.empty(values.shape, dtype=bool)
+                    good_flags.fill(False)
+                    for value in correct_flags:
+                        good_flags = good_flags | (flag_values == value)
+                    return np.where(good_flags, values, np.nan)
             return values
         return None
 

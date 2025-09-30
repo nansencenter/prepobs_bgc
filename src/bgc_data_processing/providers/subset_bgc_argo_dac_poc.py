@@ -1,0 +1,74 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug 18 12:02:33 2025
+
+@author: kimmon
+"""
+
+"""Specific parameters to load Argo-provided data."""
+
+from pathlib import Path
+
+import numpy as np
+
+from bgc_data_processing import units
+from bgc_data_processing.core.sources import DataSource
+from bgc_data_processing.core.variables.sets import SourceVariableSet
+from bgc_data_processing.defaults import PROVIDERS_CONFIG, VARS
+from bgc_data_processing.utils.patterns import FileNamePattern
+
+                
+
+loader = DataSource(
+    provider_name="SUBSET_BGC_ARGO_DAC",
+    data_format="netcdf",
+    dirin=Path(PROVIDERS_CONFIG["SUBSET_BGC_ARGO_DAC"]["PATH"]),
+    data_category=PROVIDERS_CONFIG["SUBSET_BGC_ARGO_DAC"]["CATEGORY"],
+    excluded_files=PROVIDERS_CONFIG["SUBSET_BGC_ARGO_DAC"]["EXCLUDE"],
+    files_pattern=FileNamePattern(".*.nc"),
+    variable_ensemble=SourceVariableSet(
+        provider=VARS["provider"].not_in_file(),
+        expocode=VARS["expocode"].not_in_file(),
+        date=VARS["date"].in_file_as("JULD"),
+        year=VARS["year"].not_in_file(),
+        month=VARS["month"].not_in_file(),
+        day=VARS["day"].not_in_file(),
+        hour=VARS["hour"].not_in_file(),
+        longitude=VARS["longitude"].in_file_as("LONGITUDE"),
+        latitude=VARS["latitude"].in_file_as("LATITUDE"),
+        depth=VARS["depth"]
+        .in_file_as("PRES_ADJUSTED")
+        .remove_when_nan()
+        .correct_with(lambda x: -np.abs(x)),
+        temperature=VARS["temperature"].in_file_as(
+            ("TEMP_ADJUSTED", "TEMP_ADJUSTED_QC", ["1"]),
+            ("TEMP", "TEMP_QC", ["1"]),
+        ),
+        salinity=VARS["salinity"].in_file_as(
+            ("PSAL_ADJUSTED", "PSAL_ADJUSTED_QC", ["1"]),
+            ("PSAL", "PSAL_QC", ["1"]),
+        ),
+        oxygen=VARS["oxygen"]
+        .in_file_as(("DOXY_ADJUSTED", "DOXY_ADJUSTED_QC", ["1"]),
+                    ("DOXY", "DOXY_QC", ["1"])) 
+        .correct_with(units.convert_umol_by_kg_to_mmol_by_m3),
+        phosphate=VARS["phosphate"].not_in_file(),
+        nitrate=VARS["nitrate"].in_file_as(("NITRATE_ADJUSTED", "NITRATE_ADJUSTED_QC", ["1"]),
+                                           ("NITRATE", "NITRATE_QC", ["1"])),  
+        silicate=VARS["silicate"].not_in_file(),
+        chlorophyll=VARS["chlorophyll"]
+        .in_file_as(
+           ("CHLA_ADJUSTED", "CHLA_ADJUSTED_QC", ["1"]),
+           ("CHLA", "CHLA_QC", ["1"]), 
+        )
+        .remove_when_all_nan()
+        .correct_with(lambda x: np.nan if x < 0.01 else x),
+	ph=VARS["ph"].not_in_file(),
+	dissolved_inorganic_carbon=VARS["dissolved_inorganic_carbon"].not_in_file(),
+	total_alkalinity=VARS["total_alkalinity"].not_in_file(),
+	pCO2=VARS["pCO2"].not_in_file(),
+    bbp700=VARS["bbp700"].in_file_as(
+        ("BBP700_ADJUSTED", "BBP700_ADJUSTED_QC", ["1"]),
+        ("BBP700", "BBP700_QC", ["1"])),
+    poc = VARS["poc"].in_file_as("POC", "POC_QC", ["1"])
+    ),)

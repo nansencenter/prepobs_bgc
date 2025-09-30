@@ -14,7 +14,7 @@ loader = DataSource(
     dirin=Path(PROVIDERS_CONFIG["ICES"]["PATH"]),
     data_category=PROVIDERS_CONFIG["ICES"]["CATEGORY"],
     excluded_files=PROVIDERS_CONFIG["ICES"]["EXCLUDE"],
-    files_pattern=FileNamePattern("ices_{years}.csv"),
+    files_pattern=FileNamePattern("ices_{years}.csv"), 
     variable_ensemble=SourceVariableSet(
         provider=VARS["provider"].not_in_file(),
         expocode=VARS["expocode"].in_file_as("Cruise"),
@@ -38,6 +38,12 @@ loader = DataSource(
         nitrate=VARS["nitrate"].in_file_as("NTRA").remove_when_all_nan(),
         silicate=VARS["silicate"].in_file_as("SLCA").remove_when_all_nan(),
         chlorophyll=VARS["chlorophyll"].in_file_as("CPHL").remove_when_all_nan(),
+	ph=VARS["ph"].not_in_file(),
+	dissolved_inorganic_carbon=VARS["dissolved_inorganic_carbon"].not_in_file(),
+	total_alkalinity=VARS["total_alkalinity"].not_in_file(),
+	pCO2=VARS["pCO2"].not_in_file(),
+    bbp700=VARS["bbp700"].not_in_file(),
+    poc = VARS["poc"].not_in_file(),
     ),
     read_params={
         "low_memory": False,
