@@ -36,6 +36,13 @@ PATH = "path/to/file/directory"
 CATEGORY = "float"
 #? BGC_ARGO_DAC.EXCLUDE: list[str]: files to exclude from loading
 EXCLUDE = []
+[CCHDO]
+#? ARGO_DAC.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? ARGO_DAC.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? ARGO_DAC.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
 [CLIVAR]
 #? CLIVAR.PATH: str: path to the folder containing the data
 PATH = "path/to/file/directory"
@@ -79,6 +86,13 @@ CATEGORY = "in_situ"
 #? GLODAP_CMEMS.EXCLUDE: list[str]: files to exclude from loading
 EXCLUDE = []
 [ICES]
+#? ICES.PATH: str: path to the folder containing the data
+PATH = "path/to/file/directory"
+#? ICES.CATEGORY: str: data category, either 'float' or 'in_situ'
+CATEGORY = "in_situ"
+#? ICES.EXCLUDE: list[str]: files to exclude from loading
+EXCLUDE = []
+[ICES_MARINE_DATA]
 #? ICES.PATH: str: path to the folder containing the data
 PATH = "path/to/file/directory"
 #? ICES.CATEGORY: str: data category, either 'float' or 'in_situ'
