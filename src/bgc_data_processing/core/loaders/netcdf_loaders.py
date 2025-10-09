@@ -77,13 +77,11 @@ class NetCDFLoader(BaseLoader):
         """
         
         
-        parts = filename.split("_")
-        if len(parts) >= 4:
-            return parts[3].split(".")[0]
-        elif len(parts) == 2:
-            return parts[0]
+        match = re.search(r"\d{7}", filename) # look for exactly 7 digits in a row, no more, no less
+        if match:
+            return match.group(0)
         else:
-            raise ValueError(f"Unexpected filename format: {filename}")
+            raise ValueError(f"Cannot retrieve the Argo station ID from file: {filename}")
 
     def _read(self, filepath: Path) -> netCDF4.Dataset:
         """Read the file loacted at filepath.

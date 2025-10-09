@@ -9,7 +9,12 @@ bgc_data
 # virtual environemnt
 .venv
 .vscode
-# config file
-config/*.toml
 .venv/
 .virtual_env/
+
+# config file
+config/*.toml
+config/*Zone.Identifier
+
+tools/*Zone.Identifier
+
