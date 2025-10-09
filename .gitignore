@@ -14,7 +14,8 @@ bgc_data
 
 # config file
 config/*.toml
-config/*Zone.Identifier
 
+config/*Zone.Identifier
+src/bgc_data_processing/providers/*Zone.Identifier
 tools/*Zone.Identifier
 
